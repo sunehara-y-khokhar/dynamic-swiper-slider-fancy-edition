@@ -1,0 +1,442 @@
+/* CSS variables */
+:root {
+    /* --primary-text: ;
+    --secondary-text: ; */
+    --light-gray: #ffffff99;
+    --dark-gray: #d0cecc52;
+    --gray-text: #3b3e45;
+    --white-text-white: #ffffff;
+    --black-text-black: #000000;
+}
+
+/* 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"); */
+
+/* custom font */
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../font/PlayfairDisplay/PlayfairDisplay-Bold.woff2") format("woff2"),
+        url("../font/PlayfairDisplay/PlayfairDisplay-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../font/Montserrat/Montserrat-Bold.woff2") format("woff2"),
+        url("../font/Montserrat/Montserrat-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../font/Montserrat/Montserrat-Regular.woff2") format("woff2"), ;
+    src: url("../font/Montserrat/Montserrat-Regular.woff") format("woff"), ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    font-family: sans-serif;
+    color: var(--white-text-white);
+}
+
+.slide-img {
+    display: block;
+    height: 100dvh;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.slide-bg-text {
+    opacity: 0.08;
+    color: var(--black-text-black);
+    font-family: "Playfair Display";
+    font-size: 13.6575rem;
+    font-weight: 900;
+    line-height: 0.8;
+    margin-top: -4rem;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 4.5625rem;
+}
+
+.slide-content-title {
+    color: var(--white-text-white);
+    font-family: "Playfair Display";
+    font-size: 5.625rem;
+    font-weight: 700;
+    line-height: 0.87;
+    letter-spacing: 0.2rem;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 37%;
+    left: 19%;
+    z-index: 99;
+}
+
+.slide-content-title div:nth-child(2) {
+    padding-left: 2.9375rem;
+}
+
+.slide-border-img {
+    height: 20vw;
+    width: 16vw;
+    border-width: 5vh;
+    border-style: solid;
+    border-image-slice: 10%;
+    box-shadow: 0.125rem 0.125rem 5.625rem 1.875rem #29323d38;
+    transform: translateY(-50%);
+    position: absolute;
+    top: -5%;
+    left: 9vw;
+}
+
+.slide-one .slide-border-img {
+    border-image-source: url(../images/avengers-infinitywar.jpg);
+    /* (https: //cdn.marvel.com/content/1x/avengersinfinitywar_lob_mas_hlf_01_3.jpg) */
+}
+
+.slide-two .slide-border-img {
+    border-image-source: url(../images/captain-america.jpg);
+    /*url(https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/04/Steve-Rogers-Marches-Forward-In-Captain-America-The-Winter-Soldier.jpg)  */
+}
+
+.slide-three .slide-border-img {
+    border-image-source: url(../images/guardians-of-the-galaxy.jpg);
+    /* https: //wallpapers.com/images/hd/motley-crew-guardians-of-the-galaxy-5fch4g7yhaj3a1sn.jpg */
+}
+
+.slide-content-text {
+    color: var(--white-text-white);
+    font-family: "Montserrat";
+    font-size: 0.6875rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    writing-mode: vertical-rl;
+    position: absolute;
+    left: 4.5625rem;
+    top: 5.9375rem;
+    z-index: 99;
+}
+
+.slide-content-text:after {
+    content: "";
+    background-color: var(--white-text-white);
+    width: 0.0625rem;
+    height: 2.5rem;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 13.5625rem;
+    top: 14.375rem;
+    left: 50%;
+}
+
+.slide-content-text span:nth-child(1) {
+    font-weight: 700;
+}
+
+.btn {
+    color: var(--white-text-white);
+    padding: 0.875rem 2.375rem;
+    font-size: 0.8125rem;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.slider-container .slide-btn {
+    color: var(--white-text-white);
+    border-left: 0.125rem solid var(--white-text-white);
+    border-right: 0.125rem solid var(--white-text-white);
+    padding: 0.875rem 2.1875rem;
+    font-family: "Montserrat";
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.18s ease-in-out;
+    transform: translate(2.9375rem, 3.625rem);
+    position: absolute;
+    top: 50%;
+    left: 24%;
+}
+
+.slider-container .slide-btn:hover {
+    color: var(--black-text-black);
+    background-color: var(--white-text-white);
+}
+
+.swiper-slide-active .slider-container .slide-content-title,
+.swiper-slide-active .slider-container .slide-content-text {
+    -webkit-animation: textAnimation 1s ease-out 0.5s;
+    animation: textAnimation 1s ease-out 0.5s;
+}
+
+@keyframes textAnimation {
+    0% {
+        -webkit-clip-path: inset(0 0 -20% 0);
+        clip-path: inset(0 0 -20% 0);
+    }
+
+    100% {
+        -webkit-clip-path: inset(0 0 100% 0);
+        clip-path: inset(0 0 100% 0);
+    }
+}
+
+.swiper-slide-active .slide-border-img {
+    opacity: 0;
+    animation: frameAnim 0.45s ease forwards 0.9s;
+}
+
+@keyframes frameAnim {
+    0% {
+        opacity: 0;
+        transform: translateX(calc(48vh)) rotate(12deg) translateY(-30%);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0) translateY(-30%);
+    }
+}
+
+.swiper-pagination.swiper-pagination-bullets {
+    width: 3.25rem;
+    height: 3.9375rem;
+    top: 30%;
+    right: 3.5625rem;
+    left: unset;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    width: 2rem;
+    height: 0.125rem;
+    background-color: var(--light-gray);
+    border-radius: 0.4375rem;
+    transition: 0.18s ease-in-out;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    width: 2.1875rem;
+    background-color: var(--white-text-white);
+    position: relative;
+    transform: translateX(-0.6rem);
+}
+
+.swiper-pagination .swiper-pagination-bullet-active:after {
+    content: "";
+    height: 0.25rem;
+    width: 0.125rem;
+    background-color: var(--white-text-white);
+    border-radius: 35%;
+    display: inline-block;
+    transform: translateX(0.6rem) translateY(-50%);
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.slider-btn-group {
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.slider-btn-group .swiper-wrapper {
+    align-items: center;
+}
+
+.btn-slide {
+    padding: 1.6rem 2.2rem;
+    background-color: var(--dark-gray);
+    border: 0;
+    min-width: 15rem;
+    flex-basis: 0;
+    flex-grow: 1;
+    transition: 0.25s ease-in-out;
+    outline: 0;
+}
+
+.swiper-slide-thumb-active {
+    background-color: var(--gray-text);
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+    font-weight: 700;
+}
+
+/* media query */
+
+@media screen and (max-width: 1024px) {
+    .slide-content-title {
+        font-size: 6rem;
+        top: 36%;
+        left: 18%;
+    }
+
+    .slide-content-text {
+        left: 2.875rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slide-bg-text {
+        font-size: 11.8125rem;
+    }
+
+    .slide-content-title {
+        font-size: 5.875rem;
+        left: 17%;
+        top: 28%;
+    }
+
+    .slide-content-text:after {
+        height: 1.625rem;
+        top: 105%;
+    }
+
+    .slide-border-img {
+        top: -4%;
+        transform: translateY(-30%);
+    }
+
+    .slider-container .slide-btn {
+        padding: 0.875rem 1.3125rem;
+        top: 47%;
+        left: 39%;
+    }
+
+    .swiper-pagination.swiper-pagination-bullets {
+        height: unset;
+        width: 100%;
+        left: 0;
+        top: var(--swiper-pagination-top, auto);
+        bottom: var(--swiper-pagination-bottom, 15%);
+    }
+
+    .swiper-pagination .swiper-pagination-bullet {
+        width: var(--swiper-pagination-bullet-width,
+                var(--swiper-pagination-bullet-size, 0.5rem));
+        height: var(--swiper-pagination-bullet-height,
+                var(--swiper-pagination-bullet-size, 0.5rem));
+    }
+
+    .swiper-pagination .swiper-pagination-bullet-active {
+        transform: unset;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet-active:after {
+        content: unset;
+    }
+
+    .btn-slide {
+        padding: 1.25rem 0.625rem;
+        flex-basis: unset;
+    }
+
+    .slider-btn-group {
+        display: inline-block;
+        left: 0;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .slide-bg-text {
+        /* font-size: 118px; */
+        font-size: 4.6875rem;
+        top: 38%;
+        left: 5%;
+    }
+
+    .slide-content-title {
+        font-size: 4.375rem;
+        left: 18%;
+        top: 32%;
+    }
+
+    .slide-content-title div:nth-child(2) {
+        padding-left: 1.875rem;
+    }
+
+    .slide-border-img {
+        left: 4.6875rem;
+    }
+
+    .slide-border-img {
+        height: 53vw;
+        width: 47vw;
+        left: 20%;
+    }
+
+    .slide-content-text {
+        left: 1.6875rem;
+    }
+
+    .slider-container .slide-btn {
+        top: 40%;
+        left: 17%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .slide-content-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .slide-content-title {
+        left: 18%;
+        top: 26%;
+    }
+
+    .slide-content-title div:nth-child(2) {
+        padding-left: 1.5625rem;
+    }
+
+    .slide-border-img {
+        height: 10.0625rem;
+        width: 10.5rem;
+        border-width: 1.3125rem;
+        top: 0%;
+        left: 20%;
+    }
+
+    .slide-content-text {
+        font-size: 0.625rem;
+        left: 1.6875rem;
+    }
+
+    .slider-container .slide-btn {
+        left: 11%;
+        top: 42%;
+    }
+}
